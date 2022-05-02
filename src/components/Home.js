@@ -1,10 +1,14 @@
 import React, {Component} from 'react'
+import CategoriesContainer from '../containers/CategoriesContainer'
 
 class Home extends Component {
 
     render() {
         return (
-            <h1>Welcome to JZ's Food Truck</h1>
+            <div>
+                <h1>Welcome to JZ's Food Truck</h1>
+                <CategoriesContainer/>
+            </div>
         )
     }
 }

@@ -6,7 +6,7 @@ export function fetchCategories() {
             if (categories.error) {
                 alert(categories.error)
             }else{
-                dispatch({type: 'FETCH_CATEGORIES', payload: categories.data})
+                dispatch({type: 'FETCH_CATEGORIES', payload: categories})
             }
         })
         .catch(err => alert(err))

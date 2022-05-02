@@ -1,17 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchCategories } from "../actions/fetchCategories";
+import CategoriesList from "../components/CategoriesList";
 
-class Categories extends Component {
+
+class CategoriesContainer extends Component {
 
     componentDidMount() {
-        this.fetchCategories()
+        this.props.fetchCategories()
     }
+
 
     render() {
         return (
             <div>
-
+                <CategoriesList categories={this.props.categories}/>     
             </div>
         )
     }
@@ -23,4 +26,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {fetchCategories})(Categories)
+export default connect(mapStateToProps, {fetchCategories})(CategoriesContainer)

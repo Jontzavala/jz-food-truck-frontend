@@ -4,13 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import {configureStore, applyMiddleware, compose} from 'redux'
+import {createStore, applyMiddleware, compose} from 'redux'
 import thunk from 'redux-thunk'
 import categoriesReducer from './reducers/categoriesReducer';
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-let store = configureStore(categoriesReducer, composeEnhancer(applyMiddleware(thunk)))
+let store = createStore(categoriesReducer, composeEnhancer(applyMiddleware(thunk)))
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
