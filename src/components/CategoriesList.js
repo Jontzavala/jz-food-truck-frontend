@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Card, Row, Col} from 'react-bootstrap'
+import {Container, Card, Stack} from 'react-bootstrap'
 
 const CategoriesList = (props) => {
     let categories = props.categories
@@ -7,15 +7,13 @@ const CategoriesList = (props) => {
     return (
         <div>
             <Container fluid>
-                <Row xs={1} md={2} lg={4} xl={6} classname='g-8'>
+                <Stack direction="horizontal">
                     {categories.map(category => 
-                        <Col key={category.id} className='d-flex'>
-                            <Card style={{ width: '15rem' }} className='text-center p-3 m-2 mx-auto shadow'>
-                                {category.name}
-                            </Card>
-                        </Col>
+                        <Card style={{ width: '15rem' }} className='text-center p-3 m-2 mx-auto shadow'>
+                            {category.name}
+                        </Card>
                     )}
-                </Row>
+                </Stack>
             </Container>
         </div>
     )
