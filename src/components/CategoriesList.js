@@ -9,7 +9,7 @@ const CategoriesList = (props) => {
             <Container fluid>
                 <Stack direction="horizontal">
                     {categories.map(category => 
-                        <Card style={{ width: '15rem' }} className='text-center p-3 m-2 mx-auto shadow'>
+                        <Card style={{ width: '15rem', height: '53rem'}} className='text-center p-3 m-2 mx-auto shadow'>
                             {category.name}
                         </Card>
                     )}
