@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Card, Stack} from 'react-bootstrap'
+import {Container, Card, CardGroup} from 'react-bootstrap'
 
 const CategoriesList = (props) => {
     let categories = props.categories
@@ -7,13 +7,23 @@ const CategoriesList = (props) => {
     return (
         <div>
             <Container fluid>
-                <Stack direction="horizontal">
-                    {categories.map(category => 
-                        <Card style={{ width: '15rem', height: '53rem'}} className='text-center p-3 m-2 mx-auto shadow'>
-                            {category.name}
+                {categories.map(category =>
+                <CardGroup key={category.id}>
+                        <Card>
+                            <Card.Img variant="top" src="https://www.tastingtable.com/img/gallery/chilaquiles-mexican-breakfast-recipe/intro-1641246535.jpg" />
+                            <Card.Body>
+                            <Card.Title>{category.name}</Card.Title>
+                            <Card.Text>
+                                This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.
+                            </Card.Text>
+                            </Card.Body>
+                            <Card.Footer>
+                            <small className="text-muted">Last updated 3 mins ago</small>
+                            </Card.Footer>
                         </Card>
-                    )}
-                </Stack>
+                </CardGroup>
+                )}
             </Container>
         </div>
     )
